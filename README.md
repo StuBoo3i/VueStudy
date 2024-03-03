@@ -157,3 +157,53 @@ key绑定的值期望是一个基础类型的值，例如字符串或number类�
 
 默认情况下，`v-mode` 会在每次 `input` 事件后更新数据,添加`.lazy`修饰符来改为在每次 `change` 事件后更新数据
 
+### 模板引用--获取DOM操作
+虽然 Vue 的声明性渲染模型为你抽象了大部分对 DOM 的直接操作， 但在某些情况下，我们仍然需要直接访问底层 DOM 元素。
+要实现这一点， 我们可以使用特殊的 `ref` attribute
+挂载结束后引用都会被暴露在`this.$refs`之上
+
+### 组件组成
+组件最大的优势就是可复用性
+当使用构建步骤时，我们一般会将Vue组件定义在一个单独的`.vue`文件中，这被叫做单文件组件(简称SFC)
+
+组件组成结构
+* `<template>`
+* `    <div>承载标签</div>`
+* `</template>`
+* `<script>`
+* `export default {}`
+* `</script>`
+* `<style scoped>`
+* `</style>`
+
+组件引入
+* `<template>`
+* `   <!--第三步:显示组件-->`
+* `   <MyComponent />`
+* `</template>`
+* `<script>`
+* `// 第一步:引入组件`
+* `import MyComponent from"./components/MyComponent.vue`
+* `export default {`
+* `   //第二步:注入组件`
+* `   components:{`
+* `       MyComponent`
+* `   }`
+* `}`
+* `</script>`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
